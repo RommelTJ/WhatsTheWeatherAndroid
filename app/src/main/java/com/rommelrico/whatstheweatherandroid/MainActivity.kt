@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        editText = findViewById(R.id.editText)
+        resultTextView = findViewById(R.id.resultTextView)
     }
 
     fun getWeather(view: View) {
