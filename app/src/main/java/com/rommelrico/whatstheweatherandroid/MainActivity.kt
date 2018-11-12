@@ -17,6 +17,9 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONObject
 import java.net.URLEncoder
+import android.support.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -85,7 +88,6 @@ class MainActivity : AppCompatActivity() {
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                Toast.makeText(applicationContext, "Could not find weather :(", Toast.LENGTH_SHORT).show()
             }
 
             return result
