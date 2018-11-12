@@ -69,8 +69,8 @@ class MainActivity : AppCompatActivity() {
          */
         override fun doInBackground(vararg params: String?): String {
             var result = ""
-            var url: URL
-            var urlConnection: HttpURLConnection? = null
+            val url: URL
+            val urlConnection: HttpURLConnection?
 
             try {
 
