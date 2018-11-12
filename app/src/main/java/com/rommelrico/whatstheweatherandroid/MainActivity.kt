@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val task = DownloadTask()
             val encodedCityName = URLEncoder.encode(editText?.text.toString(), "UTF-8")
 
-            task.execute("http://openweathermap.org/data/2.5/weather?q=$encodedCityName&appid=b1b15e88fa797225412429c1c50c122a1")
+            task.execute("http://api.openweathermap.org/data/2.5/weather?q=$encodedCityName&appid=a250a9d02ff1ad0ce1d34ea63cb6df33")
 
             val mgr = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             mgr.hideSoftInputFromWindow(editText?.getWindowToken(), 0)
