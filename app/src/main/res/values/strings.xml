@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WhatsTheWeatherAndroid</string>
+    <string name="enter_a_city">Enter a City...</string>
 </resources>
