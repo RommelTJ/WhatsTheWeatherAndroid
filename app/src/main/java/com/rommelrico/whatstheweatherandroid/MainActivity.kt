@@ -1,10 +1,12 @@
 package com.rommelrico.whatstheweatherandroid
 
+import android.content.Context
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +16,7 @@ import java.net.URL
 
 import org.json.JSONArray
 import org.json.JSONObject
+import java.net.URLEncoder
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +32,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getWeather(view: View) {
-        // TODO: Implement me.
+        try {
+            val task = DownloadTask()
+            val encodedCityName = URLEncoder.encode(editText?.text.toString(), "UTF-8")
+
+            task.execute("http://openweathermap.org/data/2.5/weather?q=$encodedCityName&appid=b1b15e88fa797225412429c1c50c122a1")
+
+            val mgr = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            mgr.hideSoftInputFromWindow(editText?.getWindowToken(), 0)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Toast.makeText(applicationContext, "Could not find weather :(", Toast.LENGTH_SHORT).show()
+        }
     }
 
     inner class DownloadTask: AsyncTask<String,Void,String>() {
