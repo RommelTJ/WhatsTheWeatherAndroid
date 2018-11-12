@@ -17,7 +17,6 @@ import java.net.URL
 import org.json.JSONArray
 import org.json.JSONObject
 import java.net.URLEncoder
-import android.support.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
 
 
 
